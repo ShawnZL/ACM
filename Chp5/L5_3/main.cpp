@@ -13,7 +13,7 @@ int main() {
             if (isalpha(s[i])) s[i] = tolower(s[i]);
             else s[i] = ' ';
         }
-        stringstream ss(s);//将字符串转换处理为每一个单词
+        stringstream ss(s);
         while (ss >> buf)
             dict.insert(buf);
     }

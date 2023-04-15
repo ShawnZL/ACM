@@ -11,8 +11,7 @@ vector<int> pile[maxn];
 void find_block(int a, int& p, int& h) {
     for (p = 0; p < n; ++p) {
         for (h = 0; h < pile[p].size(); ++h) {
-            if (pile[p][h] == a)
-                return;
+            if (pile[p][h] == a) return;
         }
     }
 }
@@ -28,7 +27,7 @@ void clear_above(int p, int h) {
 
 // 将第p堆高度为h及其上方的木块整体移动到p2堆的顶部
 void pile_onto(int p, int h, int p2) {
-    for (int i = h + 1; i < pile[p].size(); ++i) {
+    for (int i = h; i < pile[p].size(); ++i) {
         pile[p2].push_back(pile[p][i]);
     }
     pile[p].resize(h);
